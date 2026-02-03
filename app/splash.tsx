@@ -1,13 +1,13 @@
 import { useRouter } from 'expo-router';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Image } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function splash() {
     const router = useRouter();
-    const [isLoading, setIsLoading] = React.useState(true);
+    const [isLoading, setIsLoading] = useState(true);
 
-    React.useEffect(() => {
+    useEffect(() => {
         const timer = setTimeout(() => {
             setIsLoading(false);
             router.replace('/(tabs)');
